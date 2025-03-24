@@ -8,12 +8,19 @@ export type CommentType = {
 };
 
 export const getData = (url: string): Promise<CommentType[]> => {
-  return fetch(url).then((response) => {
-    if (response.status !== 200) {
-      throw new Error("Что то пошло не так!!! ");
-    }
-    return response.json();
-  });
+  return fetch(url)
+    .then((response) => {
+      if (response.status !== 200) {
+        throw new Error("Что то пошло не так!!! ");
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("Ошибка API:", error);
+      throw new Error(
+        "Произошла ошибка при запросе на сервер: " + error.message
+      );
+    });
 };
 
 /**
