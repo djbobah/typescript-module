@@ -4,7 +4,7 @@ export type PostType = {
   body: string;
 };
 
-export const posts = [
+export const posts: PostType[] = [
   {
     id: "62e69d5a5458aac0ed320b35",
     title: "id labore ex et quam laborum",
