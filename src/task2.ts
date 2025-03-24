@@ -7,7 +7,9 @@ type normalizedDataType = {
   allIds: string[];
 };
 
-export const normalizeData = (unnormalizedData: PostType[]) => {
+export const normalizeData = (
+  unnormalizedData: PostType[]
+): normalizedDataType => {
   const normalizedData: normalizedDataType = { byId: {}, allIds: [] };
   unnormalizedData.map((item) => {
     normalizedData.byId[item.id] = item;
