@@ -1,6 +1,9 @@
+import { getData } from "./task3";
 import { normalizeData } from "./task2";
 import { posts } from "./task2Data";
 import { totalPrice } from "./task1";
+
+const COMMENTS_URL = "https://jsonplaceholder.typicode.com/comments";
 
 //task 1
 const price = totalPrice({
@@ -30,3 +33,7 @@ console.log(price3); // 75000
 console.log(price4); // 100000
 
 console.log(normalizeData(posts));
+
+getData(COMMENTS_URL).then((data) => {
+  data.map((item) => console.log(`ID: ${item.id}, Email: ${item.email}`));
+});
