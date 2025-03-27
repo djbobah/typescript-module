@@ -1,3 +1,5 @@
+import { normalizeData } from "./task2";
+import { posts } from "./task2Data";
 import { totalPrice } from "./task1";
 
 //task 1
@@ -26,3 +28,5 @@ console.log(price); // 6250
 console.log(price2); // 75000
 console.log(price3); // 75000
 console.log(price4); // 100000
+
+console.log(normalizeData(posts));
